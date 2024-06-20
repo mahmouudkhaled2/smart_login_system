@@ -10,6 +10,8 @@ const loginPage = document.querySelector('#loginPage');
 const emailAlert = document.querySelector('email-field > span');
 const passwordAlert = document.querySelector('password-field > span');
 
+const showPassword = document.querySelector('.show-password');
+
 let usersList;
 
 if (localStorage.getItem('users')) {
@@ -50,4 +52,30 @@ signInBtn.addEventListener('click', checkData);
 logoutBtn.addEventListener('click', function () {
     home.classList.add('d-none');
     loginPage.classList.remove('d-none');
+});
+
+
+showPassword.addEventListener('click', function (e) {
+    if (e.target.classList.contains('fa-eye')) {
+            loginPasswordInput.type = 'text';
+            showPassword.classList.remove('fa-eye');
+            showPassword.classList.add('fa-eye-slash');
+    } else {
+        loginPasswordInput.type = 'password';
+        showPassword.classList.add('fa-eye');
+        showPassword.classList.remove('fa-eye-slash');
+    }
 })
+
+loginPasswordInput.oninput = function () {
+    if (loginPasswordInput.value && loginPasswordInput.type == 'password') {
+        showPassword.classList.add('fa-eye')
+    } else if (loginPasswordInput.value && loginPasswordInput.type == 'text') {
+        showPassword.classList.add('fa-eye-slash')
+        showPassword.classList.remove('fa-eye')
+    } else {
+        showPassword.classList.remove('fa-eye')
+        showPassword.classList.remove('fa-eye-slash')
+    }
+    
+}

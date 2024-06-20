@@ -19,6 +19,8 @@ function isValidName(name) {
     if (name === '') {
         nameAlert.innerHTML = 'Name is required';
         return false
+    } else if (name.length <= 2) {
+        nameAlert.innerHTML = 'must be more than 2 characters';
     } else {
         nameAlert.innerHTML = '';
         return true
@@ -88,3 +90,28 @@ function clearForm() {
 
 signUpBtn.addEventListener('click', storeUserData);
 
+const showPassword = document.querySelector('.show-password');
+
+showPassword.addEventListener('click', function (e) {
+    if (e.target.classList.contains('fa-eye')) {
+            registerPasswordInput.type = 'text';
+            showPassword.classList.remove('fa-eye');
+            showPassword.classList.add('fa-eye-slash');
+    } else {
+        registerPasswordInput.type = 'password';
+        showPassword.classList.add('fa-eye');
+        showPassword.classList.remove('fa-eye-slash');
+    }
+})
+
+registerPasswordInput.oninput = function () {
+    if (registerPasswordInput.value && registerPasswordInput.type == 'password') {
+        showPassword.classList.add('fa-eye')
+    } else if (registerPasswordInput.value && registerPasswordInput.type == 'text') {
+        showPassword.classList.add('fa-eye-slash')
+        showPassword.classList.remove('fa-eye')
+    } else {
+        showPassword.classList.remove('fa-eye')
+        showPassword.classList.remove('fa-eye-slash')
+    }
+}

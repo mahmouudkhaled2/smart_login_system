@@ -44,17 +44,18 @@
                                 <span id="emailAlert" class="text-danger"></span>
                             </email-field>
 
-                            <password-field class="d-block position-relative mb-4">
+                            <password-field class="d-block position-relative">
                                 <label for="password" class="text-white bg-main-color z-3 px-1 position-absolute">Password</label>
                                 <input type="password" class="r-pass-input form-control bg-main-color text-white" id="password" name="password">
-                                <ul id="passwordRules" class="text-danger d-none">
-                                    <li>password must be at least 8 characters</li>
-                                    <li>contains at least one letter (a-z or A-Z)</li>
-                                    <li>include at least one special character (e.g., !@#$%^&*).</li>
-                                </ul>
+                                <i class="fa-regular show-password text-white position-absolute top-50 end-0 translate-middle-y me-2"></i>
                             </password-field> 
+                            <ul id="passwordRules" class="text-danger d-none ps-3 m-0">
+                                <li>password must be at least 8 characters</li>
+                                <li>contains at least one letter (a-z or A-Z)</li>
+                                <li>include at least one special character (e.g., !@#$%^&*).</li>
+                            </ul>
 
-                            <button type="submit" class="sign-up btn btn-info py-2 rounded-pill d-block w-100 fw-semibold text-white">Sign Up</button>
+                            <button type="submit" class="sign-up btn btn-info py-2 mt-4 rounded-pill d-block w-100 fw-semibold text-white">Sign Up</button>
 
                         </div>
                         <h6 class="text-white mt-2 text-center fw-normal">Alraedy have an account ? <a href="./index.html">Sign In</a></h6>
@@ -66,7 +67,7 @@
     </section>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <script src="./js/sweetalert.min.js"></script> 
     <script src="./js/register.js"></script>
 </body>
 </html>
