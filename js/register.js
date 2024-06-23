@@ -28,7 +28,7 @@ function isValidName(name) {
 }
 
 function isValidEmail(email) {
-    let regex = /^[a-z0-9_.]+@[a-z0-9-]+\.[a-z]{2,6}(?:\.[a-z]{2,})?$/i;
+    let regex = /^(?!.*\.\.)[a-z0-9_.]+@[a-z0-9-]+\.[a-z]{2,6}(?:\.[a-z]{2,})?$/g;
 
     if (regex.test(email)) {
         for (let i = 0; i < usersList.length; i++) {
